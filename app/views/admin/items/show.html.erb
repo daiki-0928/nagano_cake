@@ -1,2 +1,13 @@
-<h1>Admin::Items#show</h1>
-<p>Find me in app/views/admin/items/show.html.erb</p>
+<h2>商品詳細</h2>
+
+<table class='table'>
+        <tr>
+          <td><%= @item.name %></td>
+          <td><%= @item.introduction %></td>
+          <td><%= @item.genre.name %></td>
+          <td><%= @item.price %>円</td>
+          <td>
+          <%= link_to "編集する", edit_admin_item_path, class: "btn btn-sm btn-success" %>
+          </td>
+        </tr>
+</table>
