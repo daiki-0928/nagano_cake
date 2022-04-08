@@ -1,0 +1,14 @@
+<h1>マイページ</h1>
+
+<table class='customer'>
+
+  <%= link_to "編集する", edit_customer_path, class: "btn btn-sm btn-success" %>
+  <tr>
+    <td><%= @customer.last_name %>
+        <%= @customer.first_name %></td>
+    <td><%= @customer.postal_code %></td>
+    <td><%= @customer.email %></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
