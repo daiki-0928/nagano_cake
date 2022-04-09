@@ -2,13 +2,15 @@
 
 <table class='customer'>
 
-  <%= link_to "編集する", edit_customer_path, class: "btn btn-sm btn-success" %>
+<p>登録情報　<%= link_to "編集する", edit_customer_path(current_customer), class: "btn btn-sm btn-success" %></p>
   <tr>
     <td><%= @customer.last_name %>
-        <%= @customer.first_name %></td>
+        <%= @customer.first_name %>
+    </td>
+    <td><%= @customer.last_name_kana %>
+        <%= @customer.first_name_kana %>
+    </td>
     <td><%= @customer.postal_code %></td>
     <td><%= @customer.email %></td>
-    <td></td>
-    <td></td>
   </tr>
 </table>

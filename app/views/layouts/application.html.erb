@@ -14,7 +14,7 @@
     <%= link_to "マイページ", customers_my_page_path %>
     <%= link_to "商品一覧", items_path %>
     <%= link_to "カート", admin_customers_path %>
-    <%= link_to "ログアウト",  destroy_customer_session_path %>
+    <%= link_to "ログアウト",  destroy_customer_session_path,method: :delete %>
     <%= yield %>
   </body>
 </html>
