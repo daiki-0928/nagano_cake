@@ -1,12 +1,18 @@
 Rails.application.routes.draw do
 
-  root to: "homes#top"
-  get "/about" => "homes#about", as: "about"
+   root to: "homes#top"
 
   scope module: :public do
+
+    get "/about" => "homes#about", as: "about"
+    post 'orders/confirm'
+    get 'orders/thanks'
+    delete 'cart_items/destroy_all'
     get "/customers/my_page" => "customers#show"
-    resources :customers, only: [:edit, :update,]
+    resources :customers, only: [:show, :edit, :update,]
     resources :items, only: [:index, :show,]
+    resources :cart_items, only: [:index, :update, :create, :destroy]
+    resources :orders, only:[:new, :show, :index, :create]
 
   end
 

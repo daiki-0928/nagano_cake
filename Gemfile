@@ -53,3 +53,5 @@ group :test do
 end
 
 gem 'devise'
+
+gem 'pry-byebug', group: :development
