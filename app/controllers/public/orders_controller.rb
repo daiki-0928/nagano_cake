@@ -4,7 +4,7 @@ class Public::OrdersController < ApplicationController
   def new
     @order = Order.new
     @customer = current_customer
-    #@addresses = current_customer.addresses
+    @addresses = current_customer.addresses
   end
 
   def confirm
@@ -20,7 +20,7 @@ class Public::OrdersController < ApplicationController
       @order.address = @customer.address
       @order.name = @customer.last_name + @customer.first_name
     elsif params[:order][:select_address] == "1"
-      address = Address.find(params[:order][:address_id])
+      @address = Address.find(params[:order][:address_id])
       @order.postal_code = address.postal_code
       @order.address = address.address
       @order.name = address.name

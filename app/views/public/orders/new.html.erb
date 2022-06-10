@@ -16,7 +16,6 @@
             <%= f.radio_button :payment_method, Order.payment_methods.key(0) %>
             <%= f.label :payment_method, Order.payment_methods_i18n[:credit_card] %>
           </div>
-
           <div class="form-check">
             <%= f.radio_button :payment_method, Order.payment_methods.key(1) %>
             <%= f.label :payment_method, Order.payment_methods_i18n[:transfer]%>
@@ -39,7 +38,7 @@
             <%= f.radio_button :select_address, 1 %>
             <%= f.label :select_address, "登録済住所から選択" %>
             <p>
-              <%#= f.select :address_id, options_from_collection_for_select(current_customer.addresses, :id, :full_address) %>
+              <%= f.select :address_id, options_from_collection_for_select(current_customer.addresses, :id, :full_address) %>
             </p>
           </div>
 
