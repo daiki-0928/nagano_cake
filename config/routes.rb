@@ -14,10 +14,10 @@ devise_for :customers,skip: [:passwords], controllers: {
 }
 
    root to: "homes#top"
+   get 'about' => 'homes#about'
 
   scope module: :public do
 
-    get "/about" => "homes#about", as: "about"
     post 'orders/confirm'
     get 'orders/thanks'
     delete 'cart_items/destroy_all'
