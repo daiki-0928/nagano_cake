@@ -22,7 +22,10 @@ devise_for :customers,skip: [:passwords], controllers: {
     get 'orders/thanks'
     delete 'cart_items/destroy_all'
     get "/customers/my_page" => "customers#show"
+    get "/customers/confirm" => "customers#confirm"
+    patch 'customers/withdraw' => 'customers#withdraw'
     resources :customers, only: [:show, :edit, :update,]
+
     resources :items, only: [:index, :show,]
     resources :cart_items, only: [:index, :update, :create, :destroy]
     post 'orders/confirm' => 'orders#confirm'
